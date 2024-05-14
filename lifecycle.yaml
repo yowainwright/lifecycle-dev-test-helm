@@ -19,15 +19,15 @@ services:
         valueFiles:
           - 'sysops/helm/common.yaml'
           - 'sysops/helm/lfc/service/app.yaml'
-        docker:
-          defaultTag: 'main'
-          app:
-            dockerfilePath: sysops/dockerfiles/app.Dockerfile
-            env:
-              TEST_TEST: 'test'
-              WHAT: "is-this"
-          ports:
-            - 8080
+      docker:
+        defaultTag: 'main'
+        app:
+          dockerfilePath: sysops/dockerfiles/app.Dockerfile
+          env:
+            TEST_TEST: 'test'
+            WHAT: "is-this"
+        ports:
+          - 8080
 
   - name: "postgres-db"
     helm:

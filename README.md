@@ -1,2 +1,3 @@
-# lifecycle-dev-test-helm
-A test repo for lifecycle with helm
+# Lifecycle Dev Test Helm
+
+A test repo for Lifecycle with helm ♻️

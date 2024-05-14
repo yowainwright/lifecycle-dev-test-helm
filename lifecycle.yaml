@@ -1,0 +1,39 @@
+---
+version: '1.1.0'
+
+environment:
+  autoDeploy: true
+  defaultServices:
+    - name: "lifecycle-dev-test-helm"
+    - name: 'postgres-db'
+  optionalServices:
+    - name: "lifecycle-dev-test"
+
+services:
+  - name: 'lc-test'
+    helm:
+      repository: 'yowainwright/lifecycle-dev-tes-helm'
+      branchName: 'main'
+      chart:
+        name: 'goodrx-app'
+        valueFiles:
+          - 'sysops/helm/common.yaml'
+          - 'sysops/helm/lfc/service/app.yaml'
+        docker:
+          defaultTag: 'main'
+          app:
+            dockerfilePath: sysops/dockerfiles/app.Dockerfile
+            env:
+              TEST_TEST: 'test'
+              WHAT: "is-this"
+          ports:
+            - 8080
+
+  - name: "postgres-db"
+    helm:
+      repository: 'yowainwright/lifecycle-dev-test-helm'
+      branchName: "main"
+      chart:
+        name: "postgresql"
+        valueFiles:
+          - 'sysops/helm/lfc/db/db.yaml'

@@ -26,8 +26,8 @@ services:
           env:
             TEST_TEST: 'test'
             WHAT: "is-this"
-        ports:
-          - 8080
+          ports:
+            - 8080
 
   - name: "postgres-db"
     helm:

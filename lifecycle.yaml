@@ -12,7 +12,7 @@ environment:
 services:
   - name: 'lc-test'
     helm:
-      repository: 'yowainwright/lifecycle-dev-tes-helm'
+      repository: 'yowainwright/lifecycle-dev-test-helm'
       branchName: 'main'
       chart:
         name: 'goodrx-app'

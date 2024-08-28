@@ -6,8 +6,6 @@ environment:
   defaultServices:
     - name: "lifecycle-dev-test-helm"
     - name: 'postgres-db'
-  optionalServices:
-    - name: "lifecycle-dev-test"
 
 services:
   - name: 'lc-test'

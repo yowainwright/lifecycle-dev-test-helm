@@ -6,8 +6,6 @@ environment:
   defaultServices:
     - name: "lifecycle-dev-test-helm"
     - name: 'postgres-db'
-  optionalServices:
-    - name: "lifecycle-dev-test"
 
 services:
   - name: 'lc-test'
@@ -23,11 +21,6 @@ services:
         defaultTag: 'main'
         app:
           dockerfilePath: sysops/dockerfiles/app.Dockerfile
-          env:
-            TEST_TEST: 'test'
-            WHAT: "is-this"
-          ports:
-            - 8080
 
   - name: "postgres-db"
     helm:

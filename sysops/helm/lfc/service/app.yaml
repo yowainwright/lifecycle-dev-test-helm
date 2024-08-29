@@ -42,35 +42,35 @@ deployment:
       memory: 100Mi
   # Probe values can be tuned according to particular application requirements
   # https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes
-  startupProbe:
-    periodSeconds: 5
-    failureThreshold: 60
-    httpGet:
-      scheme: HTTP
-      path: /__lbheartbeat__
-      port: 8080
+  # startupProbe:
+  #   periodSeconds: 5
+  #   failureThreshold: 60
+  #   httpGet:
+  #     scheme: HTTP
+  #     path: /__lbheartbeat__
+  #     port: 8080
 
-  readinessProbe:
-    periodSeconds: 10
-    failureThreshold: 3
-    httpGet:
-      scheme: HTTP
-      path: /__lbheartbeat__
-      port: 8080
+  # readinessProbe:
+  #   periodSeconds: 10
+  #   failureThreshold: 3
+  #   httpGet:
+  #     scheme: HTTP
+  #     path: /__lbheartbeat__
+  #     port: 8080
 
-  livenessProbe:
-    periodSeconds: 60
-    timeoutSeconds: 59
-    failureThreshold: 5
-    httpGet:
-      scheme: HTTP
-      path: /__lbheartbeat__
-      port: 8080
+  # livenessProbe:
+  #   periodSeconds: 60
+  #   timeoutSeconds: 59
+  #   failureThreshold: 5
+  #   httpGet:
+  #     scheme: HTTP
+  #     path: /__lbheartbeat__
+  #     port: 8080
 
-  lifecycle:
-    preStop:
-      exec:
-        command: ["/bin/sh", "-c", "sleep 120"]
+  # lifecycle:
+  #   preStop:
+  #     exec:
+  #       command: ["/bin/sh", "-c", "sleep 120"]
 
   # Slowly rollout new pods during a deployment to
   # prevent too many being unavailable at any given time

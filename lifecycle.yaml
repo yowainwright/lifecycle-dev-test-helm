@@ -9,6 +9,7 @@ environment:
 
 services:
   - name: 'lc-test'
+    appShort: 'jeffpoc'
     helm:
       repository: 'yowainwright/lifecycle-dev-test-helm'
       branchName: 'main'
